@@ -1,0 +1,22 @@
+<div class="container">
+<h2>Dashboard</h2>
+
+<h3>Upload Questionnaire (.txt)</h3>
+<form action="/upload-questionnaire" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required />
+    <button>Upload</button>
+</form>
+
+<hr>
+
+<h3>Upload Reference Document (.txt)</h3>
+<form action="/upload-reference" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required />
+    <button>Upload</button>
+</form>
+
+<form action="/generate-answers" method="POST">
+    <button>Generate Answers</button>
+</form>
+
+</div>

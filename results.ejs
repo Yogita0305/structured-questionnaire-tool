@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+
+<h2>Answer Results</h2>
+
+<p>Total Questions: <%= total %></p>
+<p>Answered with Citations: <%= answered %></p>
+<p>Not Found: <%= notFound %></p>
+
+<hr>
+
+<% answers.forEach(a => { %>
+    <div style="margin-bottom:20px;">
+        <h4>Question:</h4>
+        <p><%= a.question %></p>
+
+        <h4>Answer:</h4>
+        <textarea rows="4" cols="80"><%= a.generated_answer %></textarea>
+
+        <p><strong>Citation:</strong> <%= a.citation %></p>
+        <p><strong>Confidence:</strong> <%= a.confidence %></p>
+    </div>
+    <hr>
+<% }) %>
+
+<form action="/export" method="POST">
+    <button>Export PDF</button>
+</form>
+
+</body>
+</html>
